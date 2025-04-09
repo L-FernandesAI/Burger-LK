@@ -8,14 +8,11 @@
   </head>
 
   <body class="bg-black text-white font-sans">
-    <!-- HEADER -->
-    <!-- HERO -->
-    <!-- HERO COM VÍDEO USANDO SOMENTE TAILWIND -->
     <section
       class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden"
       id="hero"
     >
-      <!-- Vídeo de fundo -->
+
       <video
         autoplay
         muted
@@ -27,15 +24,14 @@
         Seu navegador não suporta vídeo.
       </video>
 
-      <!-- Overlay escura -->
+
       <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
-      <!-- NAVBAR -->
       <nav
         class="absolute top-0 left-0 w-full bg-black bg-opacity-50 px-4 py-4 z-50"
       >
         <div class="flex items-center justify-between w-full">
-          <!-- LOGO como texto colado à esquerda -->
+       
           <div class="flex-shrink-0">
             <span class="text-2xl font-bold">
               <span class="text-yellow-400">Burger</span
@@ -43,7 +39,7 @@
             </span>
           </div>
 
-          <!-- BOTÃO MOBILE -->
+        
           <button
             id="menu-toggle"
             class="md:hidden text-white text-2xl ml-auto"
@@ -51,7 +47,7 @@
             <i class="fas fa-bars"></i>
           </button>
 
-          <!-- MENU DESKTOP -->
+         
           <ul class="hidden md:flex gap-8 ml-auto">
             <li>
               <a
@@ -70,7 +66,7 @@
           </ul>
         </div>
 
-        <!-- MENU MOBILE -->
+ 
         <div id="mobile-menu" class="md:hidden mt-4 hidden flex-col gap-4">
           <a href="#cardapio" class="text-white text-lg block py-2">Cardápio</a>
           <a href="#checkout" class="text-white text-lg block py-2"
@@ -79,7 +75,7 @@
         </div>
       </nav>
 
-      <!-- Conteúdo principal -->
+
       <div class="relative z-20 px-4">
         <h1
           class="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg"
@@ -98,7 +94,7 @@
       </div>
     </section>
 
-    <!-- CARDÁPIO -->
+
     <section id="cardapio" class="py-20 px-6 max-w-5xl mx-auto">
       <div class="max-w-5xl mx-auto text-white">
         <h2 class="text-3xl font-bold mb-8 text-yellow-400 text-center">
@@ -106,22 +102,26 @@
         </h2>
 
         <div id="accordion" class="space-y-4">
-          <!-- 🍔 HAMBÚRGUERES ARTESANAIS -->
+   
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(0)"
               class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
             >
-              🍔 Hambúrgueres Artesanais
+              <span class="flex items-center gap-3">
+                <img src="img/burger.png" alt="Hambúrguer" class="w-6 h-6" />
+                Hambúrgueres Artesanais
+              </span>
               <span class="icon transition-transform duration-300"
                 >&#9662;</span
               >
             </button>
+
             <div
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-                <!-- ITEM 1 -->
+             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -151,7 +151,6 @@
                   </div>
                 </div>
 
-                <!-- ITEM 2 -->
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -181,7 +180,6 @@
                   </div>
                 </div>
 
-                <!-- ITEM 3 -->
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -209,7 +207,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 4 -->
+              
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -237,12 +235,12 @@
                   </div>
                 </div>
 
-                <!-- ITEM 5 -->
+  
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
                   <div>
-                    <p class="font-semibold text-white">Vegan Garden 🌱</p>
+                    <p class="font-semibold text-white">Vegan Garden</p>
                     <p class="text-sm text-gray-400">
                       Integral, grão-de-bico com beterraba, queijo vegano,
                       abacate, tahine.
@@ -267,22 +265,26 @@
               </div>
             </div>
           </div>
-          <!-- 🧀 ENTRADAS -->
+       
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(1)"
               class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
             >
-              🧀 Entradas
+              <span class="flex items-center gap-3">
+                <img src="img/cheese.png" alt="Entradas" class="w-6 h-6" />
+                Entradas
+              </span>
               <span class="icon transition-transform duration-300"
                 >&#9662;</span
               >
             </button>
+
             <div
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-                <!-- ITEM 1 -->
+             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -311,7 +313,6 @@
                   </div>
                 </div>
 
-                <!-- ITEM 2 -->
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -340,7 +341,6 @@
                   </div>
                 </div>
 
-                <!-- ITEM 3 -->
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -371,22 +371,30 @@
               </div>
             </div>
           </div>
-          <!-- 🍟 ACOMPANHAMENTOS -->
+
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(2)"
               class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
             >
-              🍟 Acompanhamentos
+              <span class="flex items-center gap-3">
+                <img
+                  src="img/french-fries.png"
+                  alt="Acompanhamentos"
+                  class="w-6 h-6"
+                />
+                Acompanhamentos
+              </span>
               <span class="icon transition-transform duration-300"
                 >&#9662;</span
               >
             </button>
+
             <div
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-                <!-- ITEM 1 -->
+ 
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -412,7 +420,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 2 -->
+
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -438,7 +446,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 3 -->
+           
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -465,7 +473,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 4 -->
+             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -494,22 +502,30 @@
               </div>
             </div>
           </div>
-          <!-- 🍰 SOBREMESAS GOURMET -->
+      
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(3)"
               class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
             >
-              🍰 Sobremesas Gourmet
+              <span class="flex items-center gap-3">
+                <img
+                  src="img/birthday-cake.png"
+                  alt="Sobremesas"
+                  class="w-6 h-6"
+                />
+                Sobremesas Gourmet
+              </span>
               <span class="icon transition-transform duration-300"
                 >&#9662;</span
               >
             </button>
+
             <div
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-                <!-- ITEM 1 -->
+
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -536,7 +552,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 2 -->
+             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -565,7 +581,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 3 -->
+               
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -594,7 +610,7 @@
                   </div>
                 </div>
 
-                <!-- ITEM 4 -->
+            
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -620,15 +636,16 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <!-- 🥤 BEBIDAS -->
+    
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(4)"
               class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
             >
-              🥤 Bebidas
+              <span class="flex items-center gap-3">
+                <img src="img/drink.png" alt="Bebidas" class="w-6 h-6" />
+                Bebidas
+              </span>
               <span class="icon transition-transform duration-300"
                 >&#9662;</span
               >
@@ -637,8 +654,8 @@
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-                <!-- SUCOS -->
-                <div class="text-white font-semibold">🧃 Sucos Naturais</div>
+         
+                <div class="text-white font-semibold">Sucos Naturais</div>
 
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
@@ -745,10 +762,8 @@
                   </div>
                 </div>
 
-                <!-- REFRIGERANTES -->
-                <div class="text-white font-semibold pt-4">
-                  🥤 Refrigerantes
-                </div>
+
+                <div class="text-white font-semibold pt-4">Refrigerantes</div>
 
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
@@ -806,9 +821,8 @@
                   </div>
                 </div>
 
-                <!-- ESPECIAIS -->
                 <div class="text-white font-semibold pt-4">
-                  🍋 Bebidas Refrescantes Artesanais
+                  Bebidas Refrescantes Artesanais
                 </div>
 
                 <div
@@ -924,7 +938,6 @@
         </div>
       </div>
     </section>
-    <!-- NOVA SEÇÃO DO CARRINHO -->
     <section id="carrinho" class="max-w-5xl mx-auto px-6 py-12">
       <div class="border-t border-gray-700 pt-6">
         <h3 class="text-xl font-semibold mb-4 text-yellow-400">🛒 Carrinho</h3>
@@ -941,10 +954,13 @@
       </div>
     </section>
 
-    <!-- FINALIZAÇÃO -->
+
     <section id="checkout" class="hidden py-20 px-6 max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-yellow-400 mb-6">
-        💳 Finalizar Pedido
+      <h2
+        class="text-3xl font-bold text-yellow-400 mb-6 flex items-center gap-3"
+      >
+        <img src="img/credit-card.png" alt="Cartão" class="w-8 h-8" />
+        Finalizar Pedido
       </h2>
 
       <input
@@ -971,10 +987,8 @@
         <option value="Dinheiro">Dinheiro</option>
       </select>
 
-      <!-- Cartão -->
-      <!-- Cartão -->
+    
       <div id="dadosCartao" class="hidden space-y-2 mb-4">
-        <!-- Nome no Cartão -->
         <input
           type="text"
           id="nomeCartao"
@@ -982,18 +996,25 @@
           class="w-full p-2 border rounded bg-black text-white"
         />
 
-        <!-- Número do Cartão -->
-        <input
-          type="text"
-          id="numeroCartao"
-          placeholder="Número do cartão"
-          class="w-full p-2 border rounded bg-black text-white"
-        />
+ 
+        <div class="relative">
+          <input
+            type="text"
+            id="numeroCartao"
+            placeholder="----  ----  ----  ----"
+            class="w-full p-2 border rounded bg-black text-white pr-12"
+          />
 
-        <!-- 🔥 Bandeira detectada aparece aqui -->
+          <img
+            id="logoBandeira"
+            src=""
+            alt=""
+            class="absolute top-1/2 right-3 transform -translate-y-1/2 h-6 hidden"
+          />
+        </div>
+
         <div id="bandeira" class="text-sm text-gray-400 mt-1"></div>
 
-        <!-- Validade e CVV -->
         <div class="flex gap-4">
           <input
             type="text"
@@ -1010,10 +1031,8 @@
         </div>
       </div>
 
-      <!-- Resumo -->
       <div id="resumoPedido" class="bg-gray-900 p-4 rounded mb-6 text-sm"></div>
 
-      <!-- Ações -->
       <div class="flex gap-4">
         <button
           onclick="confirmarPedido()"
@@ -1030,12 +1049,21 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer
-      class="bg-black border-t border-gray-800 py-6 text-center text-gray-500 text-sm"
-    >
-      &copy; 2025 BurgerX. Todos os direitos reservados.
+   
+    <footer class="bg-gray-900 border-t border-gray-800 py-8 px-4 text-gray-400 text-sm">
+      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-center md:text-left">
+          <p class="font-semibold text-white">&copy; 2025 <span class="text-yellow-400">BurgerX</span>. Todos os direitos reservados.</p>
+        </div>
+    
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-yellow-400 transition">Política de Privacidade</a>
+          <a href="#" class="hover:text-yellow-400 transition">Termos de Uso</a>
+          <a href="mailto:loanlopes91@gmail.com" class="hover:text-yellow-400 transition">Contato</a>
+        </div>
+      </div>
     </footer>
+    
 
     <script>
       const carrinho = [];
@@ -1043,7 +1071,6 @@
       function addToCart(nome, preco, el) {
         const quantidadeInput = el.previousElementSibling;
         const quantidade = parseInt(quantidadeInput.value);
-
         if (quantidade <= 0) return;
 
         const existente = carrinho.find((item) => item.nome === nome);
@@ -1074,7 +1101,8 @@
           cartDiv.innerHTML += `
             <div class="flex justify-between items-center">
               <p>${item.quantidade}x ${item.nome} - R$${subtotal.toFixed(2)}</p>
-              <button onclick="removerItem(${index})" class="text-red-400 hover:text-red-600 text-sm ml-4">🗑️</button>
+            <button onclick="removerItem(${index})" class="ml-4">
+             <img src="img/trash-bin.png" alt="Remover" class="w-5 h-5 hover:brightness-125 transition" /></button>
             </div>
           `;
         });
@@ -1118,30 +1146,6 @@
           return;
         }
 
-        // Mensagem de sucesso simulada
-        const resumo = document.getElementById("resumoPedido");
-        resumo.innerHTML = `
-    <div class="text-green-400 font-semibold">
-      ✅ Pedido confirmado com sucesso!
-    </div>
-    <p class="text-sm text-gray-300 mt-2">Obrigado, ${nome}. Seu pedido será enviado para:</p>
-    <p class="text-sm">${endereco}</p>
-    <p class="text-sm mt-2">Forma de pagamento: <strong>${pagamento}</strong></p>
-  `;
-
-        // Limpa o carrinho
-        carrinho.length = 0;
-        renderCarrinho();
-
-        // Desabilita o formulário
-        document.getElementById("nome").disabled = true;
-        document.getElementById("endereco").disabled = true;
-        document.getElementById("pagamento").disabled = true;
-        document.getElementById("dadosCartao").classList.add("hidden");
-
-        // Oculta os campos do cartão se estavam visíveis
-        const camposCartao = document.querySelectorAll("#dadosCartao input");
-        camposCartao.forEach((input) => (input.disabled = true));
         if (
           pagamento === "Cartão de Crédito" ||
           pagamento === "Cartão de Débito"
@@ -1175,6 +1179,25 @@
             return;
           }
         }
+
+        const resumo = document.getElementById("resumoPedido");
+        resumo.innerHTML = `
+          <div class="text-green-400 font-semibold">✅ Pedido confirmado com sucesso!</div>
+          <p class="text-sm text-gray-300 mt-2">Obrigado, ${nome}. Seu pedido será enviado para:</p>
+          <p class="text-sm">${endereco}</p>
+          <p class="text-sm mt-2">Forma de pagamento: <strong>${pagamento}</strong></p>
+        `;
+
+        carrinho.length = 0;
+        renderCarrinho();
+
+        document.getElementById("nome").disabled = true;
+        document.getElementById("endereco").disabled = true;
+        document.getElementById("pagamento").disabled = true;
+        document.getElementById("dadosCartao").classList.add("hidden");
+
+        const camposCartao = document.querySelectorAll("#dadosCartao input");
+        camposCartao.forEach((input) => (input.disabled = true));
       }
 
       function cancelarPedido() {
@@ -1189,7 +1212,7 @@
           if (i === index) {
             const isOpen = el.classList.contains("max-h-0");
             el.classList.toggle("max-h-0", !isOpen);
-            el.classList.toggle("max-h-[3000px]", isOpen); // Grande o suficiente pra qualquer cardápio
+            el.classList.toggle("max-h-[3000px]", isOpen);
             icons[i].style.transform = isOpen
               ? "rotate(180deg)"
               : "rotate(0deg)";
@@ -1198,52 +1221,73 @@
             el.classList.add("max-h-0");
             icons[i].style.transform = "rotate(0deg)";
           }
-          const pagamentoSelect = document.getElementById("pagamento");
-          const dadosCartao = document.getElementById("dadosCartao");
-
-          pagamentoSelect.addEventListener("change", () => {
-            const metodo = pagamentoSelect.value;
-            if (
-              metodo === "Cartão de Crédito" ||
-              metodo === "Cartão de Débito"
-            ) {
-              dadosCartao.classList.remove("hidden");
-            } else {
-              dadosCartao.classList.add("hidden");
-            }
-          });
-          // DETECTAR BANDEIRA DO CARTÃO
-          const numeroCartaoInput = document.getElementById("numeroCartao");
-          const bandeiraDiv = document.getElementById("bandeira");
-
-          numeroCartaoInput.addEventListener("input", () => {
-            const numero = numeroCartaoInput.value
-              .replace(/\s/g, "")
-              .slice(0, 6);
-            const bandeira = detectarBandeira(numero);
-            bandeiraDiv.textContent = bandeira ? `Bandeira: ${bandeira}` : "";
-          });
-
-          function detectarBandeira(numero) {
-            if (/^4/.test(numero)) return "Visa";
-            if (
-              /^5[1-5]/.test(numero) ||
-              /^2(2[2-9]|[3-6]|7[01]|720)/.test(numero)
-            )
-              return "MasterCard";
-            if (/^3[47]/.test(numero)) return "American Express";
-            if (/^6(011|5|4[4-9])/.test(numero)) return "Discover";
-            if (/^3(0[0-5]|[68])/.test(numero)) return "Diners Club";
-            if (
-              /^(636368|438935|504175|451416|509048|509067|509049|509069|509050|509074|509068|509045|509051|509046|509066|509047|509052|509043|509064|509040|509042|509041|509044)/.test(
-                numero
-              )
-            )
-              return "Elo";
-            if (/^(606282|3841)/.test(numero)) return "Hipercard";
-            return null;
-          }
         });
+      }
+
+      // LISTENER PARA MOSTRAR CAMPOS DE CARTÃO
+      const pagamentoSelect = document.getElementById("pagamento");
+      const dadosCartao = document.getElementById("dadosCartao");
+
+      pagamentoSelect.addEventListener("change", () => {
+        const metodo = pagamentoSelect.value;
+        if (metodo === "Cartão de Crédito" || metodo === "Cartão de Débito") {
+          dadosCartao.classList.remove("hidden");
+        } else {
+          dadosCartao.classList.add("hidden");
+        }
+      });
+
+      // DETECÇÃO DE BANDEIRA DO CARTÃO
+      const numeroCartaoInput = document.getElementById("numeroCartao");
+      const bandeiraDiv = document.getElementById("bandeira");
+      const logoBandeira = document.getElementById("logoBandeira"); 
+
+      numeroCartaoInput.addEventListener("input", () => {
+        const numero = numeroCartaoInput.value.replace(/\s/g, "").slice(0, 6);
+        const bandeira = detectarBandeira(numero);
+
+        if (bandeira) {
+          bandeiraDiv.textContent = `Bandeira: ${bandeira}`;
+          if (logoBandeira) {
+            logoBandeira.src = getLogoURL(bandeira);
+            logoBandeira.classList.remove("hidden");
+          }
+        } else {
+          bandeiraDiv.textContent = "";
+          if (logoBandeira) {
+            logoBandeira.classList.add("hidden");
+            logoBandeira.src = "";
+          }
+        }
+      });
+
+      function detectarBandeira(numero) {
+        if (/^4/.test(numero)) return "Visa";
+        if (/^5[1-5]/.test(numero) || /^2(2[2-9]|[3-6]|7[01]|720)/.test(numero))
+          return "MasterCard";
+        if (/^3[47]/.test(numero)) return "American Express";
+        if (/^6(011|5|4[4-9])/.test(numero)) return "Discover";
+        if (/^3(0[0-5]|[68])/.test(numero)) return "Diners Club";
+        if (/^(636368|438935|504175|451416)/.test(numero)) return "Elo";
+        if (/^(606282|3841)/.test(numero)) return "Hipercard";
+        return null;
+      }
+
+      function getLogoURL(bandeira) {
+        switch (bandeira) {
+          case "Visa":
+            return "https://img.icons8.com/color/48/000000/visa.png";
+          case "MasterCard":
+            return "https://img.icons8.com/color/48/000000/mastercard-logo.png";
+          case "American Express":
+            return "https://img.icons8.com/color/48/000000/amex.png";
+          case "Elo":
+            return "https://logodownload.org/wp-content/uploads/2016/10/elo-logo-1.png";
+          case "Hipercard":
+            return "https://logodownload.org/wp-content/uploads/2019/09/hipercard-logo.png";
+          default:
+            return "";
+        }
       }
     </script>
   </body>
