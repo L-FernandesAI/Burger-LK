@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BurgerX - Pedido Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-black text-white font-sans">
+    <!-- HEADER -->
+    <!-- HERO -->
+    <!-- HERO COM VÍDEO USANDO SOMENTE TAILWIND -->
+    <section
+      class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden"
+      id="hero"
+    >
+      <!-- Vídeo de fundo -->
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="img/lll.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo.
+      </video>
+
+      <!-- Overlay escura -->
+      <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
+
+      <!-- NAVBAR -->
+      <nav
+        class="absolute top-0 left-0 w-full bg-black bg-opacity-50 px-4 py-4 z-50"
+      >
+        <div class="flex items-center justify-between w-full">
+          <!-- LOGO como texto colado à esquerda -->
+          <div class="flex-shrink-0">
+            <span class="text-2xl font-bold">
+              <span class="text-yellow-400">Burger</span
+              ><span class="text-red-500">X</span>
+            </span>
+          </div>
+
+          <!-- BOTÃO MOBILE -->
+          <button
+            id="menu-toggle"
+            class="md:hidden text-white text-2xl ml-auto"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- MENU DESKTOP -->
+          <ul class="hidden md:flex gap-8 ml-auto">
+            <li>
+              <a
+                href="#cardapio"
+                class="text-white text-lg hover:text-yellow-400"
+                >Cardápio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#checkout"
+                class="text-white text-lg hover:text-yellow-400"
+                >Finalizar</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="mobile-menu" class="md:hidden mt-4 hidden flex-col gap-4">
+          <a href="#cardapio" class="text-white text-lg block py-2">Cardápio</a>
+          <a href="#checkout" class="text-white text-lg block py-2"
+            >Finalizar</a
+          >
+        </div>
+      </nav>
+
+      <!-- Conteúdo principal -->
+      <div class="relative z-20 px-4">
+        <h1
+          class="text-4xl md:text-6xl font-extrabold mb-4 text-white drop-shadow-lg"
+        >
+          Bem-vindo ao <span class="text-yellow-400">BurgerX</span>
+        </h1>
+        <p class="text-gray-300 mb-6 text-lg drop-shadow">
+          Faça seu pedido online e receba onde estiver!
+        </p>
+        <a
+          href="#cardapio"
+          class="bg-yellow-400 text-black font-semibold px-6 py-3 rounded hover:bg-yellow-500 transition"
+        >
+          Ver Cardápio
+        </a>
+      </div>
+    </section>
+
+    <!-- CARDÁPIO -->
+    <section id="cardapio" class="py-20 px-6 max-w-5xl mx-auto">
+      <div class="max-w-5xl mx-auto text-white">
+        <h2 class="text-3xl font-bold mb-8 text-yellow-400 text-center">
+          Cardápio
+        </h2>
+
+        <div id="accordion" class="space-y-4">
+          <!-- 🍔 HAMBÚRGUERES ARTESANAIS -->
+          <div class="bg-gray-900 rounded-lg">
+            <button
+              onclick="toggleAccordion(0)"
+              class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
+            >
+              🍔 Hambúrgueres Artesanais
+              <span class="icon transition-transform duration-300"
+                >&#9662;</span
+              >
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-4 space-y-4">
+                <!-- ITEM 1 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Burguer Black Truffle
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Brioche, black angus, gruyère, maionese trufada,
+                      cogumelos, rúcula.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 49,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Burguer Black Truffle', 49.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Cheddar & Crispy Bacon
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Australiano, angus, cheddar, bacon, cebola caramelizada,
+                      maionese defumada.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 42,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Cheddar & Crispy Bacon', 42.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Lamb & Mint Deluxe</p>
+                    <p class="text-sm text-gray-400">
+                      Pão de batata, cordeiro, queijo de cabra, molho de
+                      hortelã, tomate confit.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 54,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Lamb & Mint Deluxe', 54.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Smoked BBQ Chicken</p>
+                    <p class="text-sm text-gray-400">
+                      Brioche, frango defumado, coleslaw, gouda, barbecue
+                      artesanal.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 38,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Smoked BBQ Chicken', 38.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 5 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Vegan Garden 🌱</p>
+                    <p class="text-sm text-gray-400">
+                      Integral, grão-de-bico com beterraba, queijo vegano,
+                      abacate, tahine.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 36,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Vegan Garden 🌱', 36.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🧀 ENTRADAS -->
+          <div class="bg-gray-900 rounded-lg">
+            <button
+              onclick="toggleAccordion(1)"
+              class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
+            >
+              🧀 Entradas
+              <span class="icon transition-transform duration-300"
+                >&#9662;</span
+              >
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-4 space-y-4">
+                <!-- ITEM 1 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Brie Empanado com Geleia de Pimenta
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Cubos de queijo brie empanados, geleia artesanal.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 29,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Brie Empanado com Geleia de Pimenta', 29.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Mini Burgers Degustação (3 unid.)
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Três mini hambúrgueres com combinações variadas da casa.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 34,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Mini Burgers Degustação', 34.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Trio de Pastéis Gourmet
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Camarão com catupiry, carne de panela e brie com damasco.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 27,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Trio de Pastéis Gourmet', 27.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🍟 ACOMPANHAMENTOS -->
+          <div class="bg-gray-900 rounded-lg">
+            <button
+              onclick="toggleAccordion(2)"
+              class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
+            >
+              🍟 Acompanhamentos
+              <span class="icon transition-transform duration-300"
+                >&#9662;</span
+              >
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-4 space-y-4">
+                <!-- ITEM 1 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Batata Rústica com Alecrim e Parmesão
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 18,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Batata Rústica com Alecrim e Parmesão', 18.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Chips de Batata Doce com Páprica Defumada
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 16,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Chips de Batata Doce com Páprica Defumada', 16.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Onion Rings</p>
+                    <p class="text-sm text-gray-400">
+                      Cebola empanada artesanal.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 19,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Onion Rings', 19.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Salada Verde</p>
+                    <p class="text-sm text-gray-400">
+                      Com vinagrete de mostarda e mel.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 17,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Salada Verde', 17.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🍰 SOBREMESAS GOURMET -->
+          <div class="bg-gray-900 rounded-lg">
+            <button
+              onclick="toggleAccordion(3)"
+              class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
+            >
+              🍰 Sobremesas Gourmet
+              <span class="icon transition-transform duration-300"
+                >&#9662;</span
+              >
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-4 space-y-4">
+                <!-- ITEM 1 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Brownie com Sorvete</p>
+                    <p class="text-sm text-gray-400">
+                      Brownie de chocolate belga com sorvete de baunilha.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 24,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Brownie com Sorvete', 24.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Torta Mousse de Maracujá
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Com crocante de castanha.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 22,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Torta Mousse de Maracujá', 22.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Mini Churros Recheados
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Recheados com doce de leite argentino.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 19,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Mini Churros Recheados', 19.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ITEM 4 -->
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Cheesecake de Frutas Vermelhas
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 21,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Cheesecake de Frutas Vermelhas', 21.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 🥤 BEBIDAS -->
+          <div class="bg-gray-900 rounded-lg">
+            <button
+              onclick="toggleAccordion(4)"
+              class="w-full flex justify-between items-center p-4 text-left text-yellow-400 font-semibold text-lg"
+            >
+              🥤 Bebidas
+              <span class="icon transition-transform duration-300"
+                >&#9662;</span
+              >
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-4 space-y-4">
+                <!-- SUCOS -->
+                <div class="text-white font-semibold">🧃 Sucos Naturais</div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Suco de Laranja Espremido
+                    </p>
+                    <p class="text-sm text-gray-400">300ml, natural na hora.</p>
+                    <p class="text-yellow-400 text-sm">R$ 10,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Suco de Laranja', 10.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Suco Detox Verde</p>
+                    <p class="text-sm text-gray-400">
+                      Couve, limão, maçã verde, hortelã e gengibre.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 13,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Suco Detox Verde', 13.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Suco de Frutas Vermelhas com Água de Coco
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 14,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Suco de Frutas Vermelhas com Água de Coco', 14.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Suco de Abacaxi com Hortelã
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Levemente adoçado com mel.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 12,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Suco de Abacaxi com Hortelã', 12.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- REFRIGERANTES -->
+                <div class="text-white font-semibold pt-4">
+                  🥤 Refrigerantes
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Coca-Cola / Guaraná / Schweppes
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      350ml Tradicional ou Zero.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 7,90 – 8,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Refrigerante Lata 350ml', 8.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Refrigerantes Premium
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Club Mate, Fritz-Kola, Wewi.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 11,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Refrigerante Premium', 11.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ESPECIAIS -->
+                <div class="text-white font-semibold pt-4">
+                  🍋 Bebidas Refrescantes Artesanais
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Pink Lemonade Artesanal
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Limão siciliano, hibisco, gengibre, hortelã.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 14,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Pink Lemonade Artesanal', 14.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">Chá Gelado da Casa</p>
+                    <p class="text-sm text-gray-400">
+                      Capim-limão, pêssego ou hibisco com frutas.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 12,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Chá Gelado da Casa', 12.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Água com Gás / sem Gás
+                    </p>
+                    <p class="text-sm text-gray-400">Nacional ou importada.</p>
+                    <p class="text-yellow-400 text-sm">R$ 6,90 – 9,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Água (com ou sem gás)', 8.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+
+                <div
+                  class="flex justify-between items-start bg-gray-800 p-3 rounded"
+                >
+                  <div>
+                    <p class="font-semibold text-white">
+                      Mocktail de Frutas Vermelhas
+                    </p>
+                    <p class="text-sm text-gray-400">
+                      Com espuma de limão. Sem álcool.
+                    </p>
+                    <p class="text-yellow-400 text-sm">R$ 19,90</p>
+                  </div>
+                  <div class="flex flex-col items-end gap-2">
+                    <input
+                      type="number"
+                      value="1"
+                      min="1"
+                      class="w-16 p-1 rounded bg-black text-white border"
+                    />
+                    <button
+                      onclick="addToCart('Mocktail de Frutas Vermelhas', 19.90, this)"
+                      class="bg-green-500 hover:bg-green-600 text-white text-sm px-3 py-1 rounded"
+                    >
+                      Adicionar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- NOVA SEÇÃO DO CARRINHO -->
+    <section id="carrinho" class="max-w-5xl mx-auto px-6 py-12">
+      <div class="border-t border-gray-700 pt-6">
+        <h3 class="text-xl font-semibold mb-4 text-yellow-400">🛒 Carrinho</h3>
+        <div id="cart" class="text-sm space-y-1 text-gray-300"></div>
+        <p class="mt-2 font-bold text-white">
+          Total: R$<span id="total">0.00</span>
+        </p>
+        <button
+          onclick="toggleCheckout()"
+          class="mt-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
+        >
+          Finalizar Pedido
+        </button>
+      </div>
+    </section>
+
+    <!-- FINALIZAÇÃO -->
+    <section id="checkout" class="hidden py-20 px-6 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-6">
+        💳 Finalizar Pedido
+      </h2>
+
+      <input
+        type="text"
+        id="nome"
+        placeholder="Nome completo"
+        class="w-full p-2 mb-4 border rounded bg-black text-white"
+      />
+      <input
+        type="text"
+        id="endereco"
+        placeholder="Endereço de entrega"
+        class="w-full p-2 mb-4 border rounded bg-black text-white"
+      />
+
+      <select
+        id="pagamento"
+        class="w-full p-2 mb-4 border rounded bg-black text-white"
+      >
+        <option value="">Forma de pagamento</option>
+        <option value="Cartão de Crédito">Cartão de Crédito</option>
+        <option value="Cartão de Débito">Cartão de Débito</option>
+        <option value="Pix">Pix</option>
+        <option value="Dinheiro">Dinheiro</option>
+      </select>
+
+      <!-- Cartão -->
+      <!-- Cartão -->
+      <div id="dadosCartao" class="hidden space-y-2 mb-4">
+        <!-- Nome no Cartão -->
+        <input
+          type="text"
+          id="nomeCartao"
+          placeholder="Nome no cartão"
+          class="w-full p-2 border rounded bg-black text-white"
+        />
+
+        <!-- Número do Cartão -->
+        <input
+          type="text"
+          id="numeroCartao"
+          placeholder="Número do cartão"
+          class="w-full p-2 border rounded bg-black text-white"
+        />
+
+        <!-- 🔥 Bandeira detectada aparece aqui -->
+        <div id="bandeira" class="text-sm text-gray-400 mt-1"></div>
+
+        <!-- Validade e CVV -->
+        <div class="flex gap-4">
+          <input
+            type="text"
+            id="validadeCartao"
+            placeholder="Validade (MM/AA)"
+            class="w-full p-2 border rounded bg-black text-white"
+          />
+          <input
+            type="text"
+            id="cvvCartao"
+            placeholder="CVV"
+            class="w-full p-2 border rounded bg-black text-white"
+          />
+        </div>
+      </div>
+
+      <!-- Resumo -->
+      <div id="resumoPedido" class="bg-gray-900 p-4 rounded mb-6 text-sm"></div>
+
+      <!-- Ações -->
+      <div class="flex gap-4">
+        <button
+          onclick="confirmarPedido()"
+          class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+        >
+          Confirmar
+        </button>
+        <button
+          onclick="cancelarPedido()"
+          class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+        >
+          Cancelar
+        </button>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-black border-t border-gray-800 py-6 text-center text-gray-500 text-sm"
+    >
+      &copy; 2025 BurgerX. Todos os direitos reservados.
+    </footer>
+
+    <script>
+      const carrinho = [];
+
+      function addToCart(nome, preco, el) {
+        const quantidadeInput = el.previousElementSibling;
+        const quantidade = parseInt(quantidadeInput.value);
+
+        if (quantidade <= 0) return;
+
+        const existente = carrinho.find((item) => item.nome === nome);
+        if (existente) {
+          existente.quantidade += quantidade;
+        } else {
+          carrinho.push({ nome, preco, quantidade });
+        }
+
+        renderCarrinho();
+      }
+
+      function removerItem(index) {
+        carrinho.splice(index, 1);
+        renderCarrinho();
+      }
+
+      function renderCarrinho() {
+        const cartDiv = document.getElementById("cart");
+        const totalEl = document.getElementById("total");
+        cartDiv.innerHTML = "";
+        let total = 0;
+
+        carrinho.forEach((item, index) => {
+          const subtotal = item.preco * item.quantidade;
+          total += subtotal;
+
+          cartDiv.innerHTML += `
+            <div class="flex justify-between items-center">
+              <p>${item.quantidade}x ${item.nome} - R$${subtotal.toFixed(2)}</p>
+              <button onclick="removerItem(${index})" class="text-red-400 hover:text-red-600 text-sm ml-4">🗑️</button>
+            </div>
+          `;
+        });
+
+        totalEl.textContent = total.toFixed(2);
+      }
+
+      function toggleCheckout() {
+        document.getElementById("checkout").classList.remove("hidden");
+
+        const resumo = document.getElementById("resumoPedido");
+        let resumoHTML = "";
+        let total = 0;
+
+        carrinho.forEach((item) => {
+          const subtotal = item.preco * item.quantidade;
+          resumoHTML += `<p>${item.quantidade}x ${
+            item.nome
+          } - R$${subtotal.toFixed(2)}</p>`;
+          total += subtotal;
+        });
+
+        resumoHTML += `<p class="mt-2 font-bold text-white">Total: R$${total.toFixed(
+          2
+        )}</p>`;
+        resumo.innerHTML = resumoHTML;
+
+        window.scrollTo({
+          top: document.getElementById("checkout").offsetTop - 60,
+          behavior: "smooth",
+        });
+      }
+
+      function confirmarPedido() {
+        const nome = document.getElementById("nome").value.trim();
+        const endereco = document.getElementById("endereco").value.trim();
+        const pagamento = document.getElementById("pagamento").value;
+
+        if (!nome || !endereco || !pagamento) {
+          alert("Preencha todos os dados corretamente!");
+          return;
+        }
+
+        // Mensagem de sucesso simulada
+        const resumo = document.getElementById("resumoPedido");
+        resumo.innerHTML = `
+    <div class="text-green-400 font-semibold">
+      ✅ Pedido confirmado com sucesso!
+    </div>
+    <p class="text-sm text-gray-300 mt-2">Obrigado, ${nome}. Seu pedido será enviado para:</p>
+    <p class="text-sm">${endereco}</p>
+    <p class="text-sm mt-2">Forma de pagamento: <strong>${pagamento}</strong></p>
+  `;
+
+        // Limpa o carrinho
+        carrinho.length = 0;
+        renderCarrinho();
+
+        // Desabilita o formulário
+        document.getElementById("nome").disabled = true;
+        document.getElementById("endereco").disabled = true;
+        document.getElementById("pagamento").disabled = true;
+        document.getElementById("dadosCartao").classList.add("hidden");
+
+        // Oculta os campos do cartão se estavam visíveis
+        const camposCartao = document.querySelectorAll("#dadosCartao input");
+        camposCartao.forEach((input) => (input.disabled = true));
+        if (
+          pagamento === "Cartão de Crédito" ||
+          pagamento === "Cartão de Débito"
+        ) {
+          const nomeCartao = document.getElementById("nomeCartao").value.trim();
+          const numeroCartao = document
+            .getElementById("numeroCartao")
+            .value.trim();
+          const validade = document
+            .getElementById("validadeCartao")
+            .value.trim();
+          const cvv = document.getElementById("cvvCartao").value.trim();
+
+          if (!nomeCartao || !numeroCartao || !validade || !cvv) {
+            alert("Preencha todos os dados do cartão!");
+            return;
+          }
+
+          if (!/^\d{16}$/.test(numeroCartao.replace(/\s+/g, ""))) {
+            alert("Número do cartão inválido. Deve conter 16 dígitos.");
+            return;
+          }
+
+          if (!/^\d{2}\/\d{2}$/.test(validade)) {
+            alert("Validade inválida. Use o formato MM/AA.");
+            return;
+          }
+
+          if (!/^\d{3,4}$/.test(cvv)) {
+            alert("CVV inválido. Deve conter 3 ou 4 números.");
+            return;
+          }
+        }
+      }
+
+      function cancelarPedido() {
+        document.getElementById("checkout").classList.add("hidden");
+      }
+
+      function toggleAccordion(index) {
+        const all = document.querySelectorAll(".accordion-content");
+        const icons = document.querySelectorAll(".icon");
+
+        all.forEach((el, i) => {
+          if (i === index) {
+            const isOpen = el.classList.contains("max-h-0");
+            el.classList.toggle("max-h-0", !isOpen);
+            el.classList.toggle("max-h-[3000px]", isOpen); // Grande o suficiente pra qualquer cardápio
+            icons[i].style.transform = isOpen
+              ? "rotate(180deg)"
+              : "rotate(0deg)";
+          } else {
+            el.classList.remove("max-h-[3000px]");
+            el.classList.add("max-h-0");
+            icons[i].style.transform = "rotate(0deg)";
+          }
+          const pagamentoSelect = document.getElementById("pagamento");
+          const dadosCartao = document.getElementById("dadosCartao");
+
+          pagamentoSelect.addEventListener("change", () => {
+            const metodo = pagamentoSelect.value;
+            if (
+              metodo === "Cartão de Crédito" ||
+              metodo === "Cartão de Débito"
+            ) {
+              dadosCartao.classList.remove("hidden");
+            } else {
+              dadosCartao.classList.add("hidden");
+            }
+          });
+          // DETECTAR BANDEIRA DO CARTÃO
+          const numeroCartaoInput = document.getElementById("numeroCartao");
+          const bandeiraDiv = document.getElementById("bandeira");
+
+          numeroCartaoInput.addEventListener("input", () => {
+            const numero = numeroCartaoInput.value
+              .replace(/\s/g, "")
+              .slice(0, 6);
+            const bandeira = detectarBandeira(numero);
+            bandeiraDiv.textContent = bandeira ? `Bandeira: ${bandeira}` : "";
+          });
+
+          function detectarBandeira(numero) {
+            if (/^4/.test(numero)) return "Visa";
+            if (
+              /^5[1-5]/.test(numero) ||
+              /^2(2[2-9]|[3-6]|7[01]|720)/.test(numero)
+            )
+              return "MasterCard";
+            if (/^3[47]/.test(numero)) return "American Express";
+            if (/^6(011|5|4[4-9])/.test(numero)) return "Discover";
+            if (/^3(0[0-5]|[68])/.test(numero)) return "Diners Club";
+            if (
+              /^(636368|438935|504175|451416|509048|509067|509049|509069|509050|509074|509068|509045|509051|509046|509066|509047|509052|509043|509064|509040|509042|509041|509044)/.test(
+                numero
+              )
+            )
+              return "Elo";
+            if (/^(606282|3841)/.test(numero)) return "Hipercard";
+            return null;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
