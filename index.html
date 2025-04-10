@@ -12,7 +12,6 @@
       class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden"
       id="hero"
     >
-
       <video
         autoplay
         muted
@@ -24,40 +23,68 @@
         Seu navegador não suporta vídeo.
       </video>
 
-
       <div class="absolute inset-0 bg-black bg-opacity-60 z-10"></div>
 
-      <nav class="absolute top-0 left-0 w-full bg-black bg-opacity-50 px-4 py-4 z-50">
+      <nav
+        class="absolute top-0 left-0 w-full bg-black bg-opacity-50 px-4 py-4 z-50"
+      >
         <div class="flex items-center justify-between w-full">
-          
-      
           <div class="flex-shrink-0">
             <span class="text-2xl font-bold">
-              <span class="text-yellow-400">Burger</span><span class="text-red-500">X</span>
+              <span class="text-yellow-400">Burger</span
+              ><span class="text-red-500">X</span>
             </span>
           </div>
-      
-          <button id="menu-toggle" class="md:hidden text-white text-2xl ml-auto">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+
+          <button
+            id="menu-toggle"
+            class="md:hidden text-white text-2xl ml-auto"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
-      
-     
+
           <ul class="hidden md:flex gap-8 ml-auto">
-            <li><a href="#cardapio" class="text-white text-lg hover:text-yellow-400">Cardápio</a></li>
-            <li><a href="#checkout" class="text-white text-lg hover:text-yellow-400">Finalizar</a></li>
+            <li>
+              <a
+                href="#cardapio"
+                class="text-white text-lg hover:text-yellow-400"
+                >Cardápio</a
+              >
+            </li>
+            <li>
+              <a
+                href="#checkout"
+                class="text-white text-lg hover:text-yellow-400"
+                >Finalizar</a
+              >
+            </li>
           </ul>
         </div>
-      
-     
+
         <div id="mobile-menu" class="md:hidden mt-4 hidden flex-col gap-4">
-          <a href="#cardapio" class="text-white text-lg block py-2 border-b border-gray-700">Cardápio</a>
-          <a href="#checkout" class="text-white text-lg block py-2">Finalizar</a>
+          <a
+            href="#cardapio"
+            class="text-white text-lg block py-2 border-b border-gray-700"
+            >Cardápio</a
+          >
+          <a href="#checkout" class="text-white text-lg block py-2"
+            >Finalizar</a
+          >
         </div>
       </nav>
-      
-
 
       <div class="relative z-20 px-4">
         <h1
@@ -77,7 +104,6 @@
       </div>
     </section>
 
-
     <section id="cardapio" class="py-20 px-6 max-w-5xl mx-auto">
       <div class="max-w-5xl mx-auto text-white">
         <h2 class="text-3xl font-bold mb-8 text-yellow-400 text-center">
@@ -85,7 +111,6 @@
         </h2>
 
         <div id="accordion" class="space-y-4">
-   
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(0)"
@@ -104,7 +129,6 @@
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -190,7 +214,6 @@
                   </div>
                 </div>
 
-              
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -218,7 +241,6 @@
                   </div>
                 </div>
 
-  
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -248,7 +270,7 @@
               </div>
             </div>
           </div>
-       
+
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(1)"
@@ -267,7 +289,6 @@
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -377,7 +398,6 @@
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
- 
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -402,7 +422,6 @@
                     </button>
                   </div>
                 </div>
-
 
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
@@ -429,7 +448,6 @@
                   </div>
                 </div>
 
-           
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -456,7 +474,6 @@
                   </div>
                 </div>
 
-             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -485,7 +502,7 @@
               </div>
             </div>
           </div>
-      
+
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(3)"
@@ -508,7 +525,6 @@
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -535,7 +551,6 @@
                   </div>
                 </div>
 
-             
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -564,7 +579,6 @@
                   </div>
                 </div>
 
-               
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -593,7 +607,6 @@
                   </div>
                 </div>
 
-            
                 <div
                   class="flex justify-between items-start bg-gray-800 p-3 rounded"
                 >
@@ -619,7 +632,9 @@
                   </div>
                 </div>
               </div>
-    
+            </div>
+          </div>
+
           <div class="bg-gray-900 rounded-lg">
             <button
               onclick="toggleAccordion(4)"
@@ -637,7 +652,6 @@
               class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
             >
               <div class="p-4 space-y-4">
-         
                 <div class="text-white font-semibold">Sucos Naturais</div>
 
                 <div
@@ -744,7 +758,6 @@
                     </button>
                   </div>
                 </div>
-
 
                 <div class="text-white font-semibold pt-4">Refrigerantes</div>
 
@@ -937,7 +950,6 @@
       </div>
     </section>
 
-
     <section id="checkout" class="hidden py-20 px-6 max-w-4xl mx-auto">
       <h2
         class="text-3xl font-bold text-yellow-400 mb-6 flex items-center gap-3"
@@ -970,7 +982,6 @@
         <option value="Dinheiro">Dinheiro</option>
       </select>
 
-    
       <div id="dadosCartao" class="hidden space-y-2 mb-4">
         <input
           type="text"
@@ -979,7 +990,6 @@
           class="w-full p-2 border rounded bg-black text-white"
         />
 
- 
         <div class="relative">
           <input
             type="text"
@@ -1032,128 +1042,154 @@
       </div>
     </section>
 
-   
-    <footer class="bg-gray-900 border-t border-gray-800 py-8 px-4 text-gray-400 text-sm">
-      <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <footer
+      class="bg-gray-900 border-t border-gray-800 py-8 px-4 text-gray-400 text-sm"
+    >
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"
+      >
         <div class="text-center md:text-left">
-          <p class="font-semibold text-white">&copy; 2025 <span class="text-yellow-400">BurgerX</span>. Todos os direitos reservados.</p>
+          <p class="font-semibold text-white">
+            &copy; 2025 <span class="text-yellow-400">BurgerX</span>. Todos os
+            direitos reservados.
+          </p>
         </div>
-    
+
         <div class="flex items-center gap-4">
-          <a href="#" class="hover:text-yellow-400 transition">Política de Privacidade</a>
+          <a href="#" class="hover:text-yellow-400 transition"
+            >Política de Privacidade</a
+          >
           <a href="#" class="hover:text-yellow-400 transition">Termos de Uso</a>
-          <a href="mailto:loanlopes91@gmail.com" class="hover:text-yellow-400 transition">Contato</a>
+          <a
+            href="mailto:loanlopes91@gmail.com"
+            class="hover:text-yellow-400 transition"
+            >Contato</a
+          >
         </div>
       </div>
     </footer>
-    
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const carrinho = [];
-    
+
         function addToCart(nome, preco, el) {
           const quantidadeInput = el.previousElementSibling;
           const quantidade = parseInt(quantidadeInput.value);
           if (quantidade <= 0) return;
-    
+
           const existente = carrinho.find((item) => item.nome === nome);
           if (existente) {
             existente.quantidade += quantidade;
           } else {
             carrinho.push({ nome, preco, quantidade });
           }
-    
+
           renderCarrinho();
         }
-    
+
         function removerItem(index) {
           carrinho.splice(index, 1);
           renderCarrinho();
         }
-    
+
         function renderCarrinho() {
           const cartDiv = document.getElementById("cart");
           const totalEl = document.getElementById("total");
           cartDiv.innerHTML = "";
           let total = 0;
-    
+
           carrinho.forEach((item, index) => {
             const subtotal = item.preco * item.quantidade;
             total += subtotal;
-    
+
             cartDiv.innerHTML += `
               <div class="flex justify-between items-center">
-                <p>${item.quantidade}x ${item.nome} - R$${subtotal.toFixed(2)}</p>
+                <p>${item.quantidade}x ${item.nome} - R$${subtotal.toFixed(
+              2
+            )}</p>
                 <button onclick="removerItem(${index})" class="ml-4">
                   <img src="img/trash-bin.png" alt="Remover" class="w-5 h-5 hover:brightness-125 transition" />
                 </button>
               </div>
             `;
           });
-    
+
           totalEl.textContent = total.toFixed(2);
         }
-    
+
         function toggleCheckout() {
           document.getElementById("checkout").classList.remove("hidden");
-    
+
           const resumo = document.getElementById("resumoPedido");
           let resumoHTML = "";
           let total = 0;
-    
+
           carrinho.forEach((item) => {
             const subtotal = item.preco * item.quantidade;
-            resumoHTML += `<p>${item.quantidade}x ${item.nome} - R$${subtotal.toFixed(2)}</p>`;
+            resumoHTML += `<p>${item.quantidade}x ${
+              item.nome
+            } - R$${subtotal.toFixed(2)}</p>`;
             total += subtotal;
           });
-    
-          resumoHTML += `<p class="mt-2 font-bold text-white">Total: R$${total.toFixed(2)}</p>`;
+
+          resumoHTML += `<p class="mt-2 font-bold text-white">Total: R$${total.toFixed(
+            2
+          )}</p>`;
           resumo.innerHTML = resumoHTML;
-    
+
           window.scrollTo({
             top: document.getElementById("checkout").offsetTop - 60,
             behavior: "smooth",
           });
         }
-    
+
         function confirmarPedido() {
           const nome = document.getElementById("nome").value.trim();
           const endereco = document.getElementById("endereco").value.trim();
           const pagamento = document.getElementById("pagamento").value;
-    
+
           if (!nome || !endereco || !pagamento) {
             alert("Preencha todos os dados corretamente!");
             return;
           }
-    
-          if (pagamento === "Cartão de Crédito" || pagamento === "Cartão de Débito") {
-            const nomeCartao = document.getElementById("nomeCartao").value.trim();
-            const numeroCartao = document.getElementById("numeroCartao").value.trim();
-            const validade = document.getElementById("validadeCartao").value.trim();
+
+          if (
+            pagamento === "Cartão de Crédito" ||
+            pagamento === "Cartão de Débito"
+          ) {
+            const nomeCartao = document
+              .getElementById("nomeCartao")
+              .value.trim();
+            const numeroCartao = document
+              .getElementById("numeroCartao")
+              .value.trim();
+            const validade = document
+              .getElementById("validadeCartao")
+              .value.trim();
             const cvv = document.getElementById("cvvCartao").value.trim();
-    
+
             if (!nomeCartao || !numeroCartao || !validade || !cvv) {
               alert("Preencha todos os dados do cartão!");
               return;
             }
-    
+
             if (!/^\d{16}$/.test(numeroCartao.replace(/\s+/g, ""))) {
               alert("Número do cartão inválido. Deve conter 16 dígitos.");
               return;
             }
-    
+
             if (!/^\d{2}\/\d{2}$/.test(validade)) {
               alert("Validade inválida. Use o formato MM/AA.");
               return;
             }
-    
+
             if (!/^\d{3,4}$/.test(cvv)) {
               alert("CVV inválido. Deve conter 3 ou 4 números.");
               return;
             }
           }
-    
+
           const resumo = document.getElementById("resumoPedido");
           resumo.innerHTML = `
             <div class="text-green-400 font-semibold">✅ Pedido confirmado com sucesso!</div>
@@ -1161,32 +1197,36 @@
             <p class="text-sm">${endereco}</p>
             <p class="text-sm mt-2">Forma de pagamento: <strong>${pagamento}</strong></p>
           `;
-    
+
           carrinho.length = 0;
           renderCarrinho();
-    
+
           document.getElementById("nome").disabled = true;
           document.getElementById("endereco").disabled = true;
           document.getElementById("pagamento").disabled = true;
           document.getElementById("dadosCartao").classList.add("hidden");
-    
-          document.querySelectorAll("#dadosCartao input").forEach((input) => (input.disabled = true));
+
+          document
+            .querySelectorAll("#dadosCartao input")
+            .forEach((input) => (input.disabled = true));
         }
-    
+
         function cancelarPedido() {
           document.getElementById("checkout").classList.add("hidden");
         }
-    
+
         function toggleAccordion(index) {
           const all = document.querySelectorAll(".accordion-content");
           const icons = document.querySelectorAll(".icon");
-    
+
           all.forEach((el, i) => {
             if (i === index) {
               const isOpen = el.classList.contains("max-h-0");
               el.classList.toggle("max-h-0", !isOpen);
               el.classList.toggle("max-h-[3000px]", isOpen);
-              icons[i].style.transform = isOpen ? "rotate(180deg)" : "rotate(0deg)";
+              icons[i].style.transform = isOpen
+                ? "rotate(180deg)"
+                : "rotate(0deg)";
             } else {
               el.classList.remove("max-h-[3000px]");
               el.classList.add("max-h-0");
@@ -1194,26 +1234,26 @@
             }
           });
         }
-    
+
         // Pagamento - Exibir campos de cartão
         const pagamentoSelect = document.getElementById("pagamento");
         const dadosCartao = document.getElementById("dadosCartao");
-    
+
         pagamentoSelect.addEventListener("change", () => {
           const metodo = pagamentoSelect.value;
-          dadosCartao.classList.toggle("hidden", !(metodo.includes("Cartão")));
+          dadosCartao.classList.toggle("hidden", !metodo.includes("Cartão"));
         });
-    
+
         // Bandeira do cartão
         const numeroCartaoInput = document.getElementById("numeroCartao");
         const bandeiraDiv = document.getElementById("bandeira");
         const logoBandeira = document.getElementById("logoBandeira");
-    
+
         numeroCartaoInput.addEventListener("input", () => {
           const numero = numeroCartaoInput.value.replace(/\s/g, "").slice(0, 6);
           const bandeira = detectarBandeira(numero);
           bandeiraDiv.textContent = bandeira ? `Bandeira: ${bandeira}` : "";
-    
+
           if (logoBandeira) {
             if (bandeira) {
               logoBandeira.src = getLogoURL(bandeira);
@@ -1224,10 +1264,14 @@
             }
           }
         });
-    
+
         function detectarBandeira(numero) {
           if (/^4/.test(numero)) return "Visa";
-          if (/^5[1-5]/.test(numero) || /^2(2[2-9]|[3-6]|7[01]|720)/.test(numero)) return "MasterCard";
+          if (
+            /^5[1-5]/.test(numero) ||
+            /^2(2[2-9]|[3-6]|7[01]|720)/.test(numero)
+          )
+            return "MasterCard";
           if (/^3[47]/.test(numero)) return "American Express";
           if (/^6(011|5|4[4-9])/.test(numero)) return "Discover";
           if (/^3(0[0-5]|[68])/.test(numero)) return "Diners Club";
@@ -1235,7 +1279,7 @@
           if (/^(606282|3841)/.test(numero)) return "Hipercard";
           return null;
         }
-    
+
         function getLogoURL(bandeira) {
           switch (bandeira) {
             case "Visa":
@@ -1255,11 +1299,11 @@
 
         const toggleButton = document.getElementById("menu-toggle");
         const mobileMenu = document.getElementById("mobile-menu");
-    
+
         toggleButton.addEventListener("click", () => {
           mobileMenu.classList.toggle("hidden");
         });
-    
+
         window.addToCart = addToCart;
         window.removerItem = removerItem;
         window.toggleCheckout = toggleCheckout;
@@ -1268,6 +1312,5 @@
         window.toggleAccordion = toggleAccordion;
       });
     </script>
-    
   </body>
 </html>
